@@ -4,15 +4,23 @@
             <div class="col-sm-12">
                 <div class="grid-banner">
                     <div class="nav-left">
-                        @foreach($categories as $category)
-                            <ul class="navCate_1qlk">
-                                <li class="cateMain_2WI2">
-                                    <div class="cateMaintile_1rAT">
-                                        <a href="#">{{$category->name}}</a>
+                        <ul class="navCate_1qlk">
+                            @foreach($categories as $category)
+                                <li class="cateMain_2WI2 position-relative">
+                                    <a href="#" class="link-cate-efuIbv">
+                                        <span class="icon-wrap">
+                                            
+                                        </span>
+                                        <span class="text-wrap">
+                                            {{$category->name}}
+                                        </span>
+                                    </a>
+                                    <div class="cate-sub-menu ">
+
                                     </div>
                                 </li>
-                            </ul>
-                        @endforeach
+                            @endforeach
+                        </ul>
                     </div>
                     <div id="slider-carousel" class="carousel slide banner-left" data-ride="carousel">
                         <ol class="carousel-indicators">

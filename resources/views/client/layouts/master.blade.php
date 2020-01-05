@@ -21,6 +21,7 @@
     <link href="{{ asset('/font/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('/font/js/slick/slick-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('/font/js/slick/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/menu.css') }}" rel="stylesheet">
 
     @yield('css')
 
