@@ -1,0 +1,15 @@
+.header-403{
+    text-align: center;
+}
+.content-403{
+    text-align: center;
+}
+#back-403{
+    text-decoration: none;
+}
+#back-403:hover{
+    color: red;
+}
+.full-403{
+    background: #ccc;
+}

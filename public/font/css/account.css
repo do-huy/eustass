@@ -1,0 +1,86 @@
+
+.nav-menu-account{
+    background: #f1f1f1;
+    margin-bottom: 10px;
+}
+.content-account{
+    background: #fff;
+    padding: 12px 16px;
+}
+
+.profile-user ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color:none repeat scroll 0 0 #F0F0E9;
+  }
+
+.profile-user  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+/* Change the link color on hover */
+.profile-user  li a:hover {
+    background-color: #ccc;
+    color: white;
+  }
+.myprofile{
+    font-size: 17px;
+    color: #cd5555;
+  }
+.gach-account{
+    border: 1px solid darkgrey;
+}
+.form-account{
+    margin-top: 10px;
+    line-height: 30px;
+}
+.online-avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.upload-avatars{
+    text-align: center;
+}
+.header-account{
+    background-color: #BEBEBE;
+    padding: 8px 16px;
+}
+#color-icon{
+    color: #cd5555;
+    font-size: 30px;
+}
+.width-icon{
+    margin: 7px;
+}
+.width-icon-address{
+    margin: 18px;
+}
+.width-icon-password{
+    margin: 18px;
+}
+.width-icon-account{
+    margin: 12px;
+}
+.form-password{
+    margin-top: 10px;
+    line-height: 30px;
+}
+.border-pasword{
+    border: 3px solid #cccccc;
+}
+.margin-password{
+    margin:10px 14px;
+}
+.border-account{
+    border: 3px solid #cccccc;
+}
+.margin-account{
+    margin:10px 14px;
+}
+
