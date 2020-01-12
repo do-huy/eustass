@@ -1,0 +1,19 @@
+.nav-center{
+    width: 54.5%;
+}
+.nav-center-2{
+    display: grid;
+    /* padding: 0 15px; */
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 20px; */
+    /* margin-bottom: 40px; */
+}
+.conten-nav-center-2{
+    height: 210px;
+    background-image: url('../client/center2.png')
+}
+@media only screen and (max-width: 1000px) {
+    .conten-nav-center-2{
+        display: none;
+    }
+}
