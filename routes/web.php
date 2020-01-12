@@ -1,7 +1,14 @@
 <?php
+
+use App\Models\CategoryMain;
+
 Auth::routes();
 Route::redirect('/', 'home', 301);
-Route::get('dangnhap', 'Auth\LoginController@login')->name('client.login');
+// Route::get('dangnhap', 'Auth\LoginController@login')->name('client.login');
+
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::namespace('Admin')->middleware('auth','isAdmin')->group( function () {
     Route::resources([
         'product' => 'ProductController',
@@ -9,11 +16,16 @@ Route::namespace('Admin')->middleware('auth','isAdmin')->group( function () {
         'slide' => 'SlideController',
         'account' => 'AccountController',
         'category_type' => 'CategoryTypeController',
-        'bill' => 'BillController'
+        'bill' => 'BillController',
+        'permission' => 'PermissionController',
+        'category_main' => 'CategoryMainController'
     ]);
     Route::get('/admin','DashboardController@index')->name('dashboard');
 });
 
+Route::get('tesst', function () {
+    dd(CategoryMain::with('categories.typeCategories')->get());
+});
 
 //phần fontend
 Route::namespace('Client')->group(function () {
@@ -43,5 +55,6 @@ Route::namespace('Client')->group(function () {
         Route::get('list-order','OrderController@index_order')->name('order.index');
         Route::post('post-comment/{id}','CommentController@post_comment')->name('comment.post');
         Route::get('like_product','ProductLikeController@index')->name('product.like');
+        Route::post('product-like/{product_id}','ProductLikeController@store_product_like')->name('product.store.like');
     });
 });

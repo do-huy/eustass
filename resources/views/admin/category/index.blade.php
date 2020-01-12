@@ -25,6 +25,7 @@
                     <thead class=" text-primary">
                       <th>ID</th>
                       <th>Tên thể loại</th>
+                      <th>Thể loại chính</th>
                       <th>Hình ảnh</th>
                       <th>Thao tác</th>
                     </thead>
@@ -33,7 +34,8 @@
                       <tr>
                         <td>{{$category->id}}</td>
                         <td>{{$category->name}}</td>
-                        <td><img style="width:50px" src="{{ $category->image }}" /></td>
+                        <td>{{$category->categoryMain->name}}</td>
+                        <td><img style="width:50px" src="/upload/Category/{{$category->image}}" /></td>
                         <td class="text-primary">
                         <a href="{{route('category.edit',[$category->id])}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a>
                         <form id="form" action="{{route('category.destroy',[$category->id])}}" method="POST">

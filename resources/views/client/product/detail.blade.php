@@ -67,14 +67,14 @@
                                                 <span><i class="fab fa-dropbox"></i> Số lượng</span>
                                                 <input id="demo3_22" type="text" class="input-sm" value="" name="amount">
                                             </div>
-
-                                            <button class="btn btn-default btnCheckout"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-
+                                                <button class="btn btn-default btnCheckout"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
                                             @else
-                                            <button data-toggle="modal" data-target="#loginModal" class="btn btn-default btnCheckout"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
-
+                                                <button data-toggle="modal" data-target="#loginModal" class="btn btn-default btnCheckout"> <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng</button>
                                             @endauth
-                                            <button class="btn btn-default btnCheckout"> <i class="fas fa-heart"></i> Thêm vào sản phẩm ưa thích</button>
+                                            </form>
+                                            <form action="{{route('product.store.like',[$product->id])}}" method="POST">
+                                            @csrf
+                                                <button class="btn btn-default btnCheckout"> <i class="fas fa-heart"></i> Thêm vào sản phẩm ưa thích</button>
                                             </form>
                                         </div>
                                     </div>

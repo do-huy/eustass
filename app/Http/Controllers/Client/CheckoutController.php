@@ -9,6 +9,7 @@ use App\Models\BillDetail;
 use App\Models\Province;
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 use Auth;
 
 class CheckoutController extends Controller
@@ -45,8 +46,22 @@ class CheckoutController extends Controller
             $bill_detail->save();
             Cart::destroy($cart->id);
         }
+
+        try {
+            $this->sendEventBillsUpdatedToSocket();
+        } catch (\Exception $e) {
+
+        }
+
         return redirect(route('bill.show'));
     }
+
+    private function sendEventBillsUpdatedToSocket()
+    {
+        $http = new Client;
+        $http->get(env('NODE_SERVER') . '/bills-updated');
+    }
+
     public function billShow()
     {
         return view('client.order.checkout.display-bill');

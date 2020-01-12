@@ -47,6 +47,12 @@
             </a>
           </li>
           <li class="nav-item ">
+            <a class="nav-link" href="{{route('category_main.index')}}">
+              <i class="material-icons">category</i>
+              <p>Thể loại chính</p>
+            </a>
+          </li>
+          <li class="nav-item ">
             <a class="nav-link" href="{{route('category.index')}}">
               <i class="material-icons">category</i>
               <p>Thể loại</p>
@@ -117,6 +123,12 @@
                 <a class="nav-link" href="{{route('account.index')}}">
                   <i class="material-icons">home</i>
                   <p>Tài khoản</p>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="{{route('permission.index')}}">
+                  <i class="material-icons">home</i>
+                  <p>Quyền Eustass</p>
                 </a>
               </li>
               <li class="nav-item ">
@@ -318,7 +330,8 @@
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Chartist JS -->
   <script src="{{asset('assets/js/plugins/chartist.min.js')}}"></script>
   <!--  Notifications Plugin    -->
@@ -330,9 +343,9 @@
   <script src="{{asset('assets/demo/demo.js')}}"></script>
   <script type="text/javascript">
     // import axios form 'axios';
-    axios.get('api/get-all-bill').then(res=>{
-        console.log(res.data);
-    })
+    // axios.get('api/get-all-bill').then(res=>{
+    //     console.log(res.data);
+    // })
   </script>
   <script>
     $(document).ready(function() {

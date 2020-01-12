@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid" id="bills">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
             <div class="card">
@@ -44,19 +44,36 @@
 <script>
     export default {
         name:'BillComponent',
-        data(){
-            return{
-                bills: {},
+        data() {
+            return {
+                bills: [],
             }
         },
         methods:{
             async getAllBill(){
-                const bills = await axios.get('get-all-bill').then((res) =>res.data);
-                this.bills = bills;
+                this.bills = [];
+                const bills = await axios.get('get-all-bill').then(response => {
+                console.log('-----bills', response.data);
+                    this.bills = response.data
+                    });
+                // this.bills = bills;
             }
         },
         mounted() {
-            this.getAllBill()
+            this.getAllBill();
+        },
+
+        sockets: {
+            connect: function () {
+                console.log('socket connected')
+            },
+
+            billsChange: function (data) {
+                if (data && data.status && data.status === 'updated') {
+                    console.log('updated', data);
+                    this.getAllBill();
+                }
+            }
         },
     }
 </script>

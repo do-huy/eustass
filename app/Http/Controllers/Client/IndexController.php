@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\CategoryMain;
 use App\Models\Slide;
 use App\Models\TypeCategory;
 use Illuminate\Http\Request;
@@ -26,8 +27,9 @@ class IndexController extends Controller
             $search_msg = "Kết quả tìm kiếm cho '$keyword': $total_products kết quả ($execution_time giây)";
         }
         $categories = Category::all();
+        $category_mains = CategoryMain::with('categories.typeCategories')->get();
         $slides = Slide::all();
-        return view('client.index',compact('products','categories','slides','search_msg'));
+        return view('client.index',compact('products','categories','slides','search_msg','category_mains'));
     }
     public function productDetail($slug)
     {
@@ -37,9 +39,5 @@ class IndexController extends Controller
         $categories = Category::all();
         $slides = Slide::all();
         return view('client.product.detail',compact('product','categories','slides'));
-    }
-    public function test()
-    {
-        return view('test');
     }
 }

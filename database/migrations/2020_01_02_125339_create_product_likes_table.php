@@ -15,9 +15,11 @@ class CreateProductLikesTable extends Migration
     {
         Schema::create('product_likes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image');
+            $table->string('name');
+            $table->integer('price');
             $table->integer('amount')->default(1);
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->bigInteger('product_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

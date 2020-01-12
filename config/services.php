@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'client_id' => '460582747940980',
+        'client_secret' => 'a60590ea8cde58af0d5a0408684d02d3',
+        'redirect' => 'https://itshare-online.dev/login/facebook/callback',
+    ],
+
 ];

@@ -12,8 +12,8 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Thêm thể loại</h4>
-            <p class="card-category">Add category</p>
+            <h4 class="card-title">Sửa thể loại</h4>
+            <p class="card-category">Edit category</p>
           </div>
           <div class="card-body">
           <form action="{{route('category.update',[$category->id])}}" method="post" enctype="multipart/form-data">
@@ -22,7 +22,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Thể loại (Product)</label>
+                    <label class="bmd-label-floating">Sửa thể loại (Product)</label>
                     <input type="text" class="form-control" disabled>
                   </div>
                 </div>
@@ -37,12 +37,27 @@
               </div>
 
               <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Thể loại</label>
+                            <select style="background:#202940" class="form-control" name="category_main_id">
+                                @foreach($category_mains as $category_main)
+                                    <option {{$category->category_main_id == $category_main->id?'selected':''}}
+                                    value="{{$category_main->id}}">{{$category_main->name}}
+                                    </option>
+                                @endforeach
+                            </select>
+                          </div>
+                    </div>
+              </div>
+
+              <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="bmd-label-floating">Hình ảnh</label>
                     <div class="form-group">
-                        <input  type="file" id="file-1" value="" name="src[]" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
-                        <img style="height:70px ; width:70px" src="{{ $category->image }}" />
+                        <input  type="file" id="file-1" value="" name="src" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
+                        <img style="height:70px ; width:70px" src="/upload/Category/{{$category->image}}" />
                     </div>
                   </div>
                 </div>

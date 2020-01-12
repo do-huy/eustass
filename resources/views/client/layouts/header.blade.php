@@ -196,7 +196,7 @@
 
                 <div id="form-login-login" class="col-sm-6">
                     <div class="forn-icon-fb-g">
-                        <a href="#" style="background:#3b5998;color:aliceblue;width:100%" class="btn w-100 text-white facebook-login"><i class="fa fa-facebook"></i> Facebook</a>
+                        <a href="{{ url('/auth/facebook')}}" style="background:#3b5998;color:aliceblue;width:100%" class="btn w-100 text-white facebook-login"><i class="fa fa-facebook"></i> Facebook</a>
                         <a href="#" style="background:#dc4537;color:aliceblue;width:100%;margin-top: 10px" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Google</a>
                     </div>
                     <div class="athoer">
@@ -270,7 +270,7 @@
 
                 <div id="form-login-login" class="col-sm-6">
                     <div class="forn-icon-fb-g">
-                        <a href="#" style="background:#3b5998;color:aliceblue;width:100%" class="btn w-100 text-white facebook-login"><i class="fa fa-facebook"></i> Facebook</a>
+                        <a href="{{ url('/auth/facebook')}}" style="background:#3b5998;color:aliceblue;width:100%" class="btn w-100 text-white facebook-login"><i class="fa fa-facebook"></i> Facebook</a>
                         <a href="#" style="background:#dc4537;color:aliceblue;width:100%;margin-top: 10px" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Google</a>
                     </div>
                     <div class="athoer">

@@ -35,11 +35,23 @@
                 </div>
               </div>
               <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Tên thể loại chính (Name's Category Main)</label>
+                    <select style="background:#202940" class="form-control" name="category_main_id">
+                        @foreach($Category_mains as $Category_main)
+                            <option value="{{$Category_main->id}}">{{$Category_main->name}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Hình ảnh</label>
                         <div class="form-group">
-                        <input  type="file" id="file-1" name="src[]" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
+                        <input  type="file" id="file-1" name="src" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
                         </div>
                       </div>
                     </div>
