@@ -101,12 +101,13 @@
     border-radius: 3px;
 }
 
-.m-header i{
+.m-search-group i{
     width: 24px;
     height: 17px;
+    color: #c5192d;
 }
 
-.m-header .m-search{
+.m-search-group .m-search{
     height: 36px;
     line-height: 36px;
     width: 100%;
@@ -117,13 +118,5 @@
     margin: 0px 0px 0px 8px;
     outline: 0px;
     padding: 0px;
-}
-
-.form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #fff;
-    outline: 0;
-    box-shadow: none;
 }
 
