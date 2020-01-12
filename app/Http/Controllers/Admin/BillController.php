@@ -17,7 +17,6 @@ class BillController extends Controller
     public function index()
     {
         $bills = Bill::with('user','billDetails','billDetails.product')->get();
-        // dd($wavehouse);
         return view('admin.bill.index',compact('bills'));
     }
 

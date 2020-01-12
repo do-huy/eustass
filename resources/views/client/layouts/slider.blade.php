@@ -5,23 +5,36 @@
                 <div class="grid-banner">
                     <div class="nav-left">
                         <ul class="navCate_1qlk">
-                            @foreach($categories as $category)
+                            @foreach($category_mains as $category_main)
                                 <li class="cateMain_2WI2 position-relative">
                                     <a href="#" class="link-cate-efuIbv">
                                         <span class="icon-wrap">
-                                            
+                                            <i class="fas fa-align-center"></i>
                                         </span>
                                         <span class="text-wrap">
-                                            {{$category->name}}
+                                            {{$category_main->name}}
                                         </span>
                                     </a>
-                                    <div class="cate-sub-menu ">
 
+                                    <div class="cate-sub-menu ">
+                                        @foreach($category_main->categories as $category)
+                                        <div class="content_categories">
+                                            <div class="content_name_category">{{ $category->name }}</div>
+                                            <ul>
+                                                @foreach($category->typeCategories as $categoryType)
+                                                <li><a class="active" href="#home">{{ $categoryType->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </li>
                             @endforeach
                         </ul>
                     </div>
+                    <!--center-->
+                    <div class="nav-center">
+                        <!--center1-->
                     <div id="slider-carousel" class="carousel slide banner-left" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <?php $i=0;?>
@@ -47,7 +60,7 @@
                             <div class="carousel-image bg-image" style="background-image: url('/upload/slide/{{ $slide->src}}')">
                             </div>
                             </div>
-                                @endforeach
+                            @endforeach
                         </div>
 
                         <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
@@ -57,6 +70,14 @@
                             <i class="fa fa-angle-right"></i>
                         </a>
                     </div>
+                    <!--/center1-->
+                    <!--center2-->
+                    {{-- <div class="nav-center-2">
+                        <div class="conten-nav-center-2"></div>
+                        <div class="conten-nav-center-2"></div>
+                    </div> --}}
+                    <!--/center2-->
+                    </div><!--/center-->
                     <div class="banner-right">
                         <div class="banner-img bg-image" style="background-image: url('../client/test.png')"></div>
                         <div class="banner-img bg-image" style="background-image: url('../client/3.png')"></div>

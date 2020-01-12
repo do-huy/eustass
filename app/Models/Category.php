@@ -10,8 +10,12 @@ class Category extends Model
     {
         return $this->hasMany(Product::class);
     }
-    public function type_categories()
+    public function typeCategories()
     {
         return $this->hasMany(TypeCategory::class);
+    }
+    public function categoryMain()
+    {
+        return $this->belongsTo(CategoryMain::class);
     }
 }

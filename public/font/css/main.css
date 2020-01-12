@@ -577,7 +577,9 @@ ul.sub-menu {
     margin-bottom: 20px;
     margin-top: 10px;
 }
-
+/* .carousel-indicators {
+    top: 39% !important;
+} */
 .carousel-indicators li {
     background: #C4C4BE;
 }
@@ -2633,7 +2635,7 @@ form.example button {
 
 .banner-left {
     position: relative;
-    width: 54.5%;
+    width: 100%;
 }
 
 .nav-left {
@@ -2789,6 +2791,9 @@ form.example button {
 }
 
 @media only screen and (max-width: 860px) {
+    .nav-left{
+        display: none;
+    }
     .list-contact {
         grid-template-columns: 1fr;
     }

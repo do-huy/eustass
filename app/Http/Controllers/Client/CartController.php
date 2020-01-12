@@ -7,6 +7,7 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Slide;
 use App\Models\Category;
+use App\Models\CategoryMain;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -54,7 +55,8 @@ class CartController extends Controller
         $categories = Category::all();
         $products = Product::all();
         $slides = Slide::all();
-        return view('client.order.cart',compact('products','slides','categories'));
+        $category_mains = CategoryMain::with('categories.typeCategories')->get();
+        return view('client.order.cart',compact('products','slides','categories','category_mains'));
     }
     public function update_up($product_id)
     {
