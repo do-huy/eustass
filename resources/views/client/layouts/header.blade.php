@@ -25,126 +25,90 @@
         </div>
     </div><!--/header_top-->
 
-    <div style="background:#c5192d" class="header-middle"><!--header-middle-->
+    <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
-                {{-- <div class="col-sm-3">
-                    <div class="logo pull-left">
-                    <a href="{{route('home')}}"><img class="logohuy" src="/font/images/home/huy.png" alt="" /></a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                        <div class="shop-menu ">
-                                <form class="example" action="{{ route('home') }}"  role="search">
-                                    <input type="text" placeholder="Tìm kiếm.." name="keyword">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                        </div>
-                </div>
-                 <div class="col-sm-4">
-                        <div class="nav-reponsive">
-                                <input type="checkbox" id="chk">
-                                <label for="chk" class="show-menu-btn">
-                                  <i class="fas fa-ellipsis-h"></i>
-                                </label>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none">
-                                    @csrf
-                                </form>
-                                <ul class="menu">
-                                  @auth
-                                    <div class="dropdown">
-                                        <span class="dropbtn"><i style="font-size:20px" class="fa fa-user" aria-hidden="true"></i> {{ Str::limit(Auth::user()->name,5) }}</span>
-                                            <div class="dropdown-content">
-                                            <a href="{{route('profile.index')}}">Thông tin tài khoản</a>
-                                            <a href="{{route('address.index')}}">Thêm mới địa chỉ</a>
-                                            <a href="{{route('change.password')}}">Đổi mật khẩu</a>
-                                            <a onclick="document.getElementById('logout-form').submit()"> Đăng xuất </a>
-                                            </div>
-                                    </div>
-                                  @else
-                                  <a data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" aria-hidden="true"></i> Đăng nhập </a>
-                                  @endauth
-                                  <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> Thông báo (1)</a>
-                                  <a class="test" href="{{route('profile.index')}}"><i class="fa fa-bell" aria-hidden="true"></i> test</a>
-                                  <label for="chk" class="hide-menu-btn">
-                                    <i class="fas fa-times"></i>
-                                  </label>
-                                </ul>
-                        </div>
-                </div>
-                <div class="col-sm-2">
-                    <div id="detail-client-khung" class="shopping pull-right">
-                        @auth
-                        <div class="detail-client-cart">
-                            <a href="{{route('cart.detail')}}">
-                                <i id="detail-client-icon" class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span id="sum_amount">Giỏ hàng</span>
-                                <span class="sum_amount_background">
-                                    <span class="sum_amount_number">{{ Auth::check()?Auth::user()->carts->sum('amount'):'0' }}</span>
-                                </span>
+                <div class="header-content-new">
+                    <div class="header-logo-find-new">
+                        <div class="logo-new">
+                            <a href="{{route('home')}}">
+                                <img class="size-header-logo" src="/font/images/home/huy.png" alt="" />
                             </a>
                         </div>
-                        @else
-                        <a data-toggle="modal" data-target="#loginModal">
-                            <i style="font-size: 30px;color:#fff;margin: 7px 0px 0px 0px;" class="fa fa-shopping-cart" aria-hidden="true"></i>(<span id="sum_amount">{{ Auth::check()?Auth::user()->carts->sum('amount'):'0' }}</span>)
+                        <div class="find-new">
+                            <form class="example" action="{{ route('home') }}"  role="search">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm bạn mong muốn ..." name="keyword">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header-nav-new">
+                        <a href="{{route('order.index')}}" title="Theo dõi đơn hàng">
+                            <div class="header-goods-new">
+                                <i id="header-icon-check" class="fas fa-file-invoice-dollar"></i>
+                                <span class="text-header-goods-new">Theo dõi<br>đơn hàng</span>
+                            </div>
                         </a>
-                        @endauth
-                    </div>
-                </div> --}}
-                <div class="col-sm-2">
-                    <div class="logo">
-                        <a href="{{route('home')}}">
-                            <img class="logohuy" src="/font/images/home/huy.png" alt="" />
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="shop-menu ">
-                        <form class="example" action="{{ route('home') }}"  role="search">
-                            <input type="text" placeholder="Tìm kiếm.." name="keyword">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="nav-reponsive">
-                        <input type="checkbox" id="chk">
-                        <label for="chk" class="show-menu-btn">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </label>
+
+                        <div class="header-content-login-new">
+                            <i id="header-icon-check" class="fa fa-bell" aria-hidden="true"></i>
+                            <span class="header-number-notification-new">5</span>
+                            <span class="header-content-notification-new">Thông báo<br>của tôi</span>
+                            <div class="header-content-notification-new"><ul></ul></div>
+                        </div>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none">
                             @csrf
                         </form>
-                        <ul class="menu">
-                            <div class="order-client">
-                                <a style="padding: 0px !important" href="{{route('order.index')}}">
-                                <span><i class="fas fa-file-invoice-dollar"></i> Theo dõi đơn hàng</span>
+                        @auth
+                        <div class="header-content-login-new">
+                            <i id="header-icon-check" class="fa fa-user" aria-hidden="true"></i>
+                            <span class="header-content-notification-new"></span>
+                            <span  class="new-login">Chào {{ Str::limit(Auth::user()->name,5) }}<br>tài khoản</span>
+                            <div class="toggler Userstyle__UserDropDown-xrezqc-5 important-login">
+                                <a href="{{route('profile.index')}}"><p class="gCPwrW">Thông tin tài khoản</p></a>
+                                <a href="{{route('address.index')}}"><p class="gCPwrW">Thêm mới địa chỉ</p></a>
+                                <a href="{{route('change.password')}}"><p class="gCPwrW">Đổi mật khẩu</p></a>
+                                <a onclick="document.getElementById('logout-form').submit()"> <p class="gCPwrW">Đăng xuất</p></a>
+                            </div>
+                        </div>
+                        @else
+                        <div class="header-content-login-new">
+                            <i id="header-icon-check" class="fa fa-user" aria-hidden="true"></i>
+                            <span class="header-content-notification-new"></span>
+                            <span  class="new-login">Đăng nhập<br>Tài khoản</span>
+                            <div class="toggler Userstyle__UserDropDown-xrezqc-5 important-login">
+                                <button data-toggle="modal" data-target="#loginModal" class="header-color-login-new">Đăng nhập</button>
+                                <button data-toggle="modal" data-target="#registerModal" class="header-color-login-new">Tạo tài khoản</button>
+                                <a href="{{ url('/auth/facebook')}}">
+                                    <button class="header-color-facebook-new">
+                                        <span class="kceUvB">
+                                            <i class="fab fa-facebook"></i>
+                                        </span>Đăng nhập bằng Facebook
+                                    </button>
                                 </a>
+                                <button class="header-color-google-new">
+                                    <span class="Userstyle__ButtonIcon-xrezqc-9 kceUvB">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </span>Đăng nhập bằng Google
+                                </button>
+                                <button class="header-color-zalo-new">
+                                    <span class="Userstyle__ButtonIcon-xrezqc-9 kceUvB">
+                                        <i class="fab fa-zalo"></i>
+                                    </span>Đăng nhập bằng Zalo
+                                </button>
                             </div>
+                        </div>
+                        @endauth
 
-                            <div class="dropdown">
-                            @auth
-                                <span class="dropbtn">
-                                    <i style="font-size:20px" class="fa fa-user" aria-hidden="true"></i> Chào {{ Str::limit(Auth::user()->name,5) }}
-                                </span>
-                                <div class="dropdown-content">
-                                    <a href="{{route('profile.index')}}">Thông tin tài khoản</a>
-                                    <a href="{{route('address.index')}}">Thêm mới địa chỉ</a>
-                                    <a href="#">Sản phẩm ưa thích</a>
-                                    <a href="{{route('change.password')}}">Đổi mật khẩu</a>
-                                    <a onclick="document.getElementById('logout-form').submit()"> Đăng xuất </a>
-                                </div>
-                            </div>
-                            @else
-                            <a data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" aria-hidden="true"></i> Đăng nhập </a>
-                            @endauth
-                            <div class="notification-client ">
-                                <span>
-                                    <i class="fa fa-bell" aria-hidden="true"></i> Thông báo (1)
+                        <a href="{{route('cart.detail')}}">
+                            <div class="header-content-cart-new">
+                                <i style="margin-right: 5px" class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="header-name-cart-new">Giỏ hàng
+                                    <span class="header-name-number-new">{{ Auth::check()?Auth::user()->carts->sum('amount'):'0' }}</span>
                                 </span>
                             </div>
-
-                            <a href="{{route('cart.detail')}}">
+                        </a>
+                        {{-- <a href="{{route('cart.detail')}}">
                             <div class="cart-client-khung pull-right">
                                 <div class="cart-client-note ">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -155,8 +119,9 @@
 
                                 </div>
                             </div>
-                            </a>
-                        </ul>
+                            </a> --}}
+
+
                     </div>
                 </div>
             </div>

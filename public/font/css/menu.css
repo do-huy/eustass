@@ -19,7 +19,10 @@
 .menu {
     /* float: right; */
 }
-
+.content_categories {
+    display: inline-table;
+    margin: 0px 31px 0px 0px;
+}
 .menu a {
     color: #fff;
     text-decoration: none;

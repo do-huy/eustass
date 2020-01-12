@@ -15,7 +15,6 @@
                         <p>{{isset($categories[$i*2+1])?$categories[$i*2+1]->name:''}}<br></p>
                     </div>
                 </a>
-
         </div>
         @endfor
     </div>

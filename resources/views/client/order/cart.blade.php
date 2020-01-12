@@ -93,7 +93,7 @@
                     sum_amount = parseInt(response.sum_amount).toLocaleString();
                     quan_product.find('#cart-total').text(total);
                     quan_product.find('#cart-amount').text(amount);
-                    $('.sum_amount_number').text(sum_amount);
+                    $('.header-name-number-new').text(sum_amount);
                     $('#cart-all').text(all);
                 }
             });
