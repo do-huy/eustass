@@ -9,6 +9,9 @@ use App\Models\CategoryMain;
 use App\Models\Slide;
 use App\Models\TypeCategory;
 use Illuminate\Http\Request;
+
+use Jenssegers\Agent\Agent;
+
 class IndexController extends Controller
 {
     public function index()
@@ -29,7 +32,17 @@ class IndexController extends Controller
         $categories = Category::all();
         $category_mains = CategoryMain::with('categories.typeCategories')->get();
         $slides = Slide::all();
-        return view('client.index',compact('products','categories','slides','search_msg','category_mains'));
+
+        // nhận diện mobile
+        $agent = new Agent();
+
+        return view($agent->isMobile() ? 'mobile.modules.index' : 'client.index', compact(
+            'products',
+            'categories',
+            'slides',
+            'search_msg',
+            'category_mains'
+        ));
     }
     public function productDetail($slug)
     {

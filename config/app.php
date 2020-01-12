@@ -177,6 +177,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+
+        Jenssegers\Agent\AgentServiceProvider::class,
     ],
 
     /*
@@ -230,6 +232,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];

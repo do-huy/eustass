@@ -1,0 +1,129 @@
+.m-header{
+    height: 200px;
+    background-image: radial-gradient(circle, #c5192d, #ba2836, #ae323e, #a13a45, #94414a);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.m-bhhlc{
+    text-align: center;
+    position: absolute;
+    z-index: 99;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: auto;
+}
+
+.m-header .m-hamburger{
+    position: absolute;
+    z-index: 1;
+    left: 2px;
+    top: 6px;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    background: 0px center;
+    outline: 0px;
+}
+
+.m-header .m-logo{
+    position: absolute;
+    top: 8px;
+    left: 35%;
+    width: 40px;
+    margin-left: 0;
+    opacity: 1;
+}
+
+.m-header .m-logo img{
+    width: 130px;
+    height: auto;
+}
+
+.m-hamburger span{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 2px 0px;
+}
+
+.m-header .m-cart{
+    position: absolute;
+    top: 13px;
+    right: 17px;
+    width: 24px;
+    color: rgb(255, 255, 255);
+}
+
+.m-cart .m-count{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: -5px;
+    width: 16px;
+    height: 16px;
+    font-size: 11px;
+    line-height: 14px;
+    background-color: rgb(253, 130, 10);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.m-header .m-search-group{
+    display: flex;
+    position: absolute;
+    -webkit-box-align: center;
+    align-items: center;
+    top: 65px;
+    left: 12px;
+    right: 12px;
+    z-index: 1;
+    height: 40px;
+    line-height: 36px;
+    background-color: rgb(255, 255, 255);
+    transition-duration: 0.3s;
+    padding: 0px 12px;
+    border-radius: 3px;
+}
+
+.m-header i{
+    width: 24px;
+    height: 17px;
+}
+
+.m-header .m-search{
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    margin: 0px 0px 0px 8px;
+    outline: 0px;
+    padding: 0px;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+
