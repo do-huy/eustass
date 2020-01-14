@@ -12,6 +12,13 @@
     @yield('css')
 </head>
 <body>
+    <div class="m-menu is-closed">
+        <div class="m-menu-inner">
+
+        </div>
+        <div class="overlay"></div>
+    </div>
+
     <header class="m-header">
         <div class="m-bhhlc">
             <button class="m-hamburger">
@@ -37,10 +44,16 @@
         </div>
 
     </header>
-    @yield('content')
+
+    <main class="m-main mt-0">
+
+        @yield('content')
+
+    </main>
 
 
     <script src="{{asset('mobile/js/plugins.js?v=1')}}"></script>
+    <script src="{{asset('mobile/js/modules/master.js?v=1')}}"></script>
     @yield('script')
 
 </body>
