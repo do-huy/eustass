@@ -27,19 +27,36 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
                       <label class="bmd-label-floating">Tên sản phẩm</label>
                       <input type="text" name="name" class="form-control">
                     </div>
                   </div>
-                  <div class="col-md-6">
+              </div>
+
+              <div class="row">
+                  <div class="col-md-4">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Thể loại</label>
-                      <select style="background:#202940" class="form-control" name="category_id">
-                          @foreach($categories as $category)
-                              <option value="{{$category->id}}">{{$category->name}}</option>
+                      <label class="bmd-label-floating">Thể loại chính</label>
+                      <select id="category_main_id" style="background:#202940" class="form-control" name="category_main_id">
+                          @foreach($category_mains as $category_main)
+                              <option value="{{$category_main->id}}">{{$category_main->name}}</option>
                           @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Danh mục thể loại</label>
+                      <select id="category_id" style="background:#202940" class="form-control" name="category_id">
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Loại thể loại</label>
+                      <select id="category_type_id" style="background:#202940" class="form-control" name="category_type_id">
                       </select>
                     </div>
                   </div>
@@ -187,5 +204,34 @@
           $('#body_table').append(rowAdd);
         }
 </script>
+<script type="text/javascript">
+    var category_mains = {!! json_encode($category_mains->toArray()) !!};
+    var categories = [];
+    // var TypeCategorys = [];
 
+    writeCategory(category_mains);
+    // writeCategoryType(categories);
+
+    $('#category_main_id').change(function () {
+        writeCategory(category_mains);
+        // writeCategoryType(categories);
+    });
+
+    // $('#category_id').change(function () {
+    //     writeCategoryType(categories);
+    // });
+
+    function writeCategory(category_mains) {
+        let p = category_mains.filter(category_main => category_main.id == $('#category_main_id').val());
+        categories = p[0].categories;
+        $('#category_id').empty();
+        categories.forEach(catogory => {
+            let html = `<option value="${catogory.id}">${catogory.name}</option>`;
+            $('#category_id').append(html);
+        });
+    }
+
+
+
+</script>
 @endsection

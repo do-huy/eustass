@@ -24,4 +24,9 @@ class CategoryController extends Controller
         // }die;
         return view('client.category.category-detail',compact('products','slides','category','categories','category_mains'));
     }
+    public function category_views()
+    {
+        $slides = Slide::all();
+        return view('client.category.category-type');
+    }
 }

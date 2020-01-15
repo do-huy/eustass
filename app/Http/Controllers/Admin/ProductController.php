@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\CategoryMain;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Property;
@@ -19,8 +20,10 @@ class ProductController extends Controller
     }
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.product.create',compact('categories'));
+        // $categories = Category::all();
+        $category_mains = CategoryMain::with('categories','categories.typeCategories')->get();
+        // dd($category_mains);
+        return view('admin.product.create',compact('category_mains'));
     }
     public function store(Request $request)
     {

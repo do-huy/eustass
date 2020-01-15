@@ -80,7 +80,7 @@
                     </div><!--/center-->
                     <div class="banner-right">
                         <div class="banner-img bg-image" style="background-image: url('../client/test.png')"></div>
-                        <div class="banner-img bg-image" style="background-image: url('../client/3.png')"></div>
+                        <div class="banner-img bg-image" style="background-image: url('../client/test.png')"></div>
                     </div>
                 </div>
             </div>
