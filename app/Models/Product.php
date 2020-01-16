@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function category_type()
+    {
+        return $this->belongsTo(TypeCategory::class);
     }
 
     public function images()
@@ -29,4 +33,17 @@ class Product extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    // vừa sửa chữa
+    public function typeCategories()
+    {
+        return $this->hasManyThrough(TypeCategory::class,Category::class,CategoryMain::class);
+    }
+
+    // mới làm
+    public function CategoryMain()
+    {
+        return $this->belongsTo(CategoryMain::class);
+    }
+
+
 }

@@ -165,11 +165,42 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.6/js/fileinput.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.6/themes/fa/theme.js"></script>
+<script type="text/javascript">
+    var category_mains = {!! json_encode($category_mains->toArray()) !!};
+    var categories = [];
+    var typeCategories = [];
+    writeCategories(category_mains);
+    writeTypeCategories(categories);
+    $('#category_main_id').change(function () {
+        writeCategories(category_mains);
+        writeTypeCategories(categories);
+    });
+    $('#category_id').change(function () {
+        writeTypeCategories(categories);
+    });
 
+    function writeCategories(category_mains) {
+        let p = category_mains.filter(category_main => category_main.id == $('#category_main_id').val());
+        categories = p[0].categories;
+        $('#category_id').empty();
+        categories.forEach(category => {
+            let html = `<option value="${category.id}">${category.name}</option>`;
+            $('#category_id').append(html);
+        });
+    }
+    function writeTypeCategories(categories) {
+        let d = categories.filter(category => category.id == $('#category_id').val());
+        type_categories = d[0].type_categories;
+        $('#category_type_id').empty();
+        type_categories.forEach(category_type => {
+            let html = `<option value="${category_type.id}">${category_type.name}</option>`;
+            $('#category_type_id').append(html);
+        });
+    }
+</script>
 <script>
     CKEDITOR.replace( 'ckeditor' );
 </script>
-
 <script>
     $("#file-1").fileinput({
       theme:'fa',
@@ -187,7 +218,6 @@
       }
     });
 </script>
-
 <script>
         function toDeleteRow(row)
         {
@@ -204,34 +234,5 @@
           $('#body_table').append(rowAdd);
         }
 </script>
-<script type="text/javascript">
-    var category_mains = {!! json_encode($category_mains->toArray()) !!};
-    var categories = [];
-    // var TypeCategorys = [];
 
-    writeCategory(category_mains);
-    // writeCategoryType(categories);
-
-    $('#category_main_id').change(function () {
-        writeCategory(category_mains);
-        // writeCategoryType(categories);
-    });
-
-    // $('#category_id').change(function () {
-    //     writeCategoryType(categories);
-    // });
-
-    function writeCategory(category_mains) {
-        let p = category_mains.filter(category_main => category_main.id == $('#category_main_id').val());
-        categories = p[0].categories;
-        $('#category_id').empty();
-        categories.forEach(catogory => {
-            let html = `<option value="${catogory.id}">${catogory.name}</option>`;
-            $('#category_id').append(html);
-        });
-    }
-
-
-
-</script>
 @endsection

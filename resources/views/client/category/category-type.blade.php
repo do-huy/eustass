@@ -11,10 +11,10 @@
                      {{ Breadcrumbs::render('category',$category) }}
                     </div>
                         <div class="features_items"><!--features_items-->
-                            <h2 class="title text-center">Loại Danh mục ( {{ $category->name }} ) <sup>{{count($products)}} Sản phẩm</sup></h2>
+                            <h2 class="title text-center">Loại Danh mục ( {{ $category->name }} ) <sup>{{count($category->products)}} Sản phẩm</sup></h2>
 
                             <div class="list-product">
-                                @foreach($products as $product)
+                                @foreach($category->products as $product)
                                         <a href="{{route('product.detail',[$product->slug])}}">
                                             <div class="siggle-product">
                                                 <div class="text-center">

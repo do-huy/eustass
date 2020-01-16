@@ -14,4 +14,10 @@ class CategoryMain extends Model
     {
         return $this->hasManyThrough(TypeCategory::class,Category::class);
     }
+
+    // mới làm
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

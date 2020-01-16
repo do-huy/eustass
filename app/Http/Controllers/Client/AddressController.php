@@ -15,7 +15,6 @@ class AddressController extends Controller
         $user = Auth::user();
         $addresses = Auth::user()->addresses;
         $provinces = Province::with('districts','districts.wards')->get();
-        // dd($provinces);
         return view('client.address.index',compact('provinces','addresses'),array('user' => Auth::user()));
     }
     public function store(Request $request)
