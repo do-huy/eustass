@@ -23,8 +23,11 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->text('description');
             $table->string('slug');
+            $table->unsignedBigInteger('category_main_id');
+            $table->foreign('category_main_id')->references('id')->on('category_mains');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->bigInteger('category_type_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ $factory->define(Product::class, function (Faker $faker) {
         'note' => $faker->text,
         'description' => $faker->text,
         'slug' => $faker->text(10),
-        'category_id' => $faker->randomElement(App\Models\Category::pluck('id'))
+        'category_id' => $faker->randomElement(App\Models\Category::pluck('id')),
+        'category_main_id' => $faker->randomElement(App\Models\CategoryMain::pluck('id')),
+        'category_type_id' => $faker->numberBetween(10,100)
     ];
 });

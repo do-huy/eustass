@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\CategoryMain;
 use App\Models\Image;
 use App\Models\Product;
 use App\Models\Property;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller
@@ -19,15 +20,16 @@ class ProductController extends Controller
     }
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.product.create',compact('categories'));
+        $category_mains = CategoryMain::with('categories','categories.typeCategories')->get();
+        return view('admin.product.create',compact('category_mains'));
     }
     public function store(Request $request)
     {
-
         $product = new Product;
         $product->name = $request->name;
+        $product->category_main_id = $request->category_main_id;
         $product->category_id = $request->category_id;
+        $product->category_type_id = $request->category_type_id;
         $product->amount = $request->amount;
         $product->weight = $request->weight;
         $product->price = $request->price;

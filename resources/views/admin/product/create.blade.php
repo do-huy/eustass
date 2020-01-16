@@ -27,19 +27,36 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="form-group">
                       <label class="bmd-label-floating">Tên sản phẩm</label>
                       <input type="text" name="name" class="form-control">
                     </div>
                   </div>
-                  <div class="col-md-6">
+              </div>
+
+              <div class="row">
+                  <div class="col-md-4">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Thể loại</label>
-                      <select style="background:#202940" class="form-control" name="category_id">
-                          @foreach($categories as $category)
-                              <option value="{{$category->id}}">{{$category->name}}</option>
+                      <label class="bmd-label-floating">Thể loại chính</label>
+                      <select id="category_main_id" style="background:#202940" class="form-control" name="category_main_id">
+                          @foreach($category_mains as $category_main)
+                              <option value="{{$category_main->id}}">{{$category_main->name}}</option>
                           @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Danh mục thể loại</label>
+                      <select id="category_id" style="background:#202940" class="form-control" name="category_id">
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Loại thể loại</label>
+                      <select id="category_type_id" style="background:#202940" class="form-control" name="category_type_id">
                       </select>
                     </div>
                   </div>
@@ -148,11 +165,42 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.6/js/fileinput.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.6/themes/fa/theme.js"></script>
+<script type="text/javascript">
+    var category_mains = {!! json_encode($category_mains->toArray()) !!};
+    var categories = [];
+    var typeCategories = [];
+    writeCategories(category_mains);
+    writeTypeCategories(categories);
+    $('#category_main_id').change(function () {
+        writeCategories(category_mains);
+        writeTypeCategories(categories);
+    });
+    $('#category_id').change(function () {
+        writeTypeCategories(categories);
+    });
 
+    function writeCategories(category_mains) {
+        let p = category_mains.filter(category_main => category_main.id == $('#category_main_id').val());
+        categories = p[0].categories;
+        $('#category_id').empty();
+        categories.forEach(category => {
+            let html = `<option value="${category.id}">${category.name}</option>`;
+            $('#category_id').append(html);
+        });
+    }
+    function writeTypeCategories(categories) {
+        let d = categories.filter(category => category.id == $('#category_id').val());
+        type_categories = d[0].type_categories;
+        $('#category_type_id').empty();
+        type_categories.forEach(category_type => {
+            let html = `<option value="${category_type.id}">${category_type.name}</option>`;
+            $('#category_type_id').append(html);
+        });
+    }
+</script>
 <script>
     CKEDITOR.replace( 'ckeditor' );
 </script>
-
 <script>
     $("#file-1").fileinput({
       theme:'fa',
@@ -170,7 +218,6 @@
       }
     });
 </script>
-
 <script>
         function toDeleteRow(row)
         {

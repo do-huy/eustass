@@ -11,7 +11,7 @@
                      {{ Breadcrumbs::render('category',$category) }}
                     </div>
                         <div class="features_items"><!--features_items-->
-                            <h2 class="title text-center">Danh mục ( {{ $category->name }} ) <sup>{{count($category->products)}} Sản phẩm</sup></h2>
+                            <h2 class="title text-center">Loại Danh mục ( {{ $category->name }} ) <sup>{{count($category->products)}} Sản phẩm</sup></h2>
 
                             <div class="list-product">
                                 @foreach($category->products as $product)

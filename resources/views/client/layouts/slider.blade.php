@@ -22,7 +22,7 @@
                                             <div class="content_name_category">{{ $category->name }}</div>
                                             <ul>
                                                 @foreach($category->typeCategories as $categoryType)
-                                                <li><a class="active" href="#home">{{ $categoryType->name }}</a></li>
+                                                <li><a class="active" href="{{route('category.views',[$categoryType->id])}}">{{ $categoryType->name }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -80,7 +80,7 @@
                     </div><!--/center-->
                     <div class="banner-right">
                         <div class="banner-img bg-image" style="background-image: url('../client/test.png')"></div>
-                        <div class="banner-img bg-image" style="background-image: url('../client/3.png')"></div>
+                        <div class="banner-img bg-image" style="background-image: url('../client/test.png')"></div>
                     </div>
                 </div>
             </div>

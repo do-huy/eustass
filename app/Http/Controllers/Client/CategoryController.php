@@ -14,14 +14,17 @@ class CategoryController extends Controller
     public function category_detail($id)
     {
         $slides = Slide::all();
-        $products = Product::where('category_id',$id)->get();
-        $category = Category::find($id);
-        $categories = Category::all();
+
         $category_mains = CategoryMain::with('categories.typeCategories')->get();
-        // $category = Category::with('products')->find($id);
-        // foreach ($category->products as  $product) {
-        //     echo $product->name;
-        // }die;
-        return view('client.category.category-detail',compact('products','slides','category','categories','category_mains'));
+        $category = Category::with('products')->find($id);
+        return view('client.category.category-detail',compact('slides','category','category_mains'));
+    }
+    public function category_views($id)
+    {
+        $slides = Slide::all();
+        $category_mains = CategoryMain::with('categories.typeCategories')->get();
+
+        $category = Category::with('products')->find($id);
+        return view('client.category.category-type',compact('slides','category_mains','category'));
     }
 }

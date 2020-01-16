@@ -32,6 +32,7 @@ Route::namespace('Client')->group(function () {
     Route::get('/home','IndexController@index')->name('home');
     Route::get('home/product/{slug}','IndexController@productDetail')->name('product.detail');
     Route::get('category-detail/{id}','CategoryController@category_detail')->name('category.detail');
+    Route::get('category-views/{id}','CategoryController@category_views')->name('category.views');
     Route::middleware('auth')->group(function () {
         Route::post('add-to-cart/{product_id}', 'CartController@store')->name('cart.store');
         Route::post('add-to-cart-detail/{product_id}', 'CartController@store_detail')->name('cart.store.detail');
