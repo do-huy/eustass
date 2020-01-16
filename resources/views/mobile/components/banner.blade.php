@@ -1,16 +1,21 @@
+{{-- 
+ * @todo: dành cho trang nào có banner
+ * @author: Chiến
+ * @since: 15-01-2020
+--}}
 <div class="m-banner">
     <div class="owl-carousel owl-theme">
-        <div class="item"><h4>1</h4></div>
-        <div class="item"><h4>2</h4></div>
-        <div class="item"><h4>3</h4></div>
-        <div class="item"><h4>4</h4></div>
-        <div class="item"><h4>5</h4></div>
-        <div class="item"><h4>6</h4></div>
-        <div class="item"><h4>7</h4></div>
-        <div class="item"><h4>8</h4></div>
-        <div class="item"><h4>9</h4></div>
-        <div class="item"><h4>10</h4></div>
-        <div class="item"><h4>11</h4></div>
-        <div class="item"><h4>12</h4></div>
+        <a href="" class="item">
+            <img src="https://salt.tikicdn.com/cache/w2048/ts/banner/1e/62/b0/bfcb39c2de7c2507ba919898aff749c4.png" alt="">
+        </a>
+        <a href="" class="item">
+            <img src="https://salt.tikicdn.com/cache/w2048/ts/banner/1e/62/b0/bfcb39c2de7c2507ba919898aff749c4.png" alt="">
+        </a>
+        <a href="" class="item">
+            <img src="https://salt.tikicdn.com/cache/w2048/ts/banner/1e/62/b0/bfcb39c2de7c2507ba919898aff749c4.png" alt="">
+        </a>
+        <a href="" class="item">
+            <img src="https://salt.tikicdn.com/cache/w2048/ts/banner/1e/62/b0/bfcb39c2de7c2507ba919898aff749c4.png" alt="">
+        </a>
     </div>
 </div>
