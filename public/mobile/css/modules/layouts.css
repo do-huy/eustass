@@ -258,13 +258,14 @@
     border-radius: 4px;
 }
 
-.m-categories{
+.m-categories, .m-category{
     background-color: rgb(255, 255, 255);
     overflow: hidden;
     padding: 0px 0px 6px;
+    margin: 0px 0px 8px;
 }
 
-.m-categories .m-c-heading{
+.m-categories .m-c-heading, .m-category .m-c-heading{
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -295,7 +296,7 @@
     padding: 5px;
 }
 
-.m-c-slide{
+.m-c-side{
     white-space: nowrap;
     margin-bottom: 6px;
     display: flex;
@@ -304,7 +305,7 @@
     text-align: center;
 }
 
-.m-c-slide .item {
+.m-c-side .item {
     width: 16.6666666667%;
     min-width: 100px;
     display: inline-block;
@@ -314,7 +315,7 @@
     margin: 0px 8px;
 }
 
-.m-c-slide .item span {
+.m-c-side .item span {
     white-space: normal;
     font-size: 13px;
     line-height: 20px;
@@ -325,4 +326,96 @@
     max-height: 37px;
     margin: 8px 0px 0px;
     overflow: hidden;
+}
+
+.m-c-banner-advertisement{
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding-top: 33.3333%;
+}
+
+.m-c-banner-advertisement img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.m-c-categories{
+    white-space: nowrap;
+    overflow-x: auto;
+    margin: 5px 6px 6px;
+    display: flex;
+}
+
+.m-c-categories .m-c-item{
+    display: inline-block;
+    font-size: 13px;
+    line-height: 24px;
+    color: rgb(116, 116, 116);
+    margin: 0px 12px 0px 0px;
+    padding: 2px 12px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(187, 187, 187);
+    border-image: initial;
+    border-radius: 4px;
+}
+
+.m-c-categories .m-c-item.active {
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
+    border-color: rgb(36, 36, 36);
+}
+
+.m-c-product{
+    overflow-x: auto;
+    padding: 5px;
+}
+
+.m-c-product-item{
+    min-width: 140px;
+    display: inline-block;
+    vertical-align: top;
+    color: rgb(36, 36, 36);
+    margin: 0px 12px 0px 0px;
+    text-decoration: none;
+}
+
+.m-c-product-image{
+    position: relative;
+    z-index: 1;
+    width: 140px;
+    height: 140px;
+}
+
+.m-c-product-image img{
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.m-c-product-name{
+    font-size: 13px;
+    line-height: 16px;
+    height: 33px;
+    white-space: normal;
+    margin: 8px 0px 4px;
+    overflow: hidden;
+}
+
+.m-c-product-price{
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: 500;
 }

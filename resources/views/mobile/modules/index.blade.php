@@ -6,8 +6,38 @@
         
     @endcomponent
 
-    {{-- category --}}
+    {{-- categories --}}
     @component('mobile.components.categories')
+        
+    @endcomponent
+
+    {{-- category --}}
+    @component('mobile.components.category')
+        
+    @endcomponent
+
+    {{-- category --}}
+    @component('mobile.components.category')
+        
+    @endcomponent
+
+    {{-- category --}}
+    @component('mobile.components.category')
+        
+    @endcomponent
+
+    {{-- category --}}
+    @component('mobile.components.category')
+        
+    @endcomponent
+
+    {{-- category --}}
+    @component('mobile.components.category')
+        
+    @endcomponent
+
+    {{-- category --}}
+    @component('mobile.components.category')
         
     @endcomponent
 
