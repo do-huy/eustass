@@ -14,7 +14,6 @@ class CategoryController extends Controller
     public function category_detail($id)
     {
         $slides = Slide::all();
-
         $category_mains = CategoryMain::with('categories.typeCategories')->get();
         $category = Category::with('products')->find($id);
         return view('client.category.category-detail',compact('slides','category','category_mains'));
