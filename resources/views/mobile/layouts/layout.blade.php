@@ -12,45 +12,15 @@
     @yield('css')
 </head>
 <body>
-    <div class="m-menu is-closed">
-        <div class="m-menu-inner">
-
-        </div>
-        <div class="overlay"></div>
-    </div>
-
-    <header class="m-header">
-        <div class="m-bhhlc">
-            <button class="m-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <a href="" class="m-logo">
-                <img src="{{asset('font/images/home/huy.png')}}" alt="">
-            </a>
-
-            <a href="" class="m-cart">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="m-count">1</span>
-            </a>
-
-            <div class="m-search-group">
-                <i class="fas fa-search"></i>
-                <input type="text" aria-label="search" class="m-search form-control" placeholder="Bạn muốn tìm gì hôm nay?">
-            </div>
-            
-        </div>
-
-    </header>
+    
+    @include('mobile.includes.menu')
+    @include('mobile.includes.header')
 
     <main class="m-main mt-0">
 
         @yield('content')
 
     </main>
-
 
     <script src="{{asset('mobile/js/plugins.js?v=1')}}"></script>
     <script src="{{asset('mobile/js/modules/master.js?v=1')}}"></script>

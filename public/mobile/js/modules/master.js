@@ -19,23 +19,35 @@
 
     });
 
+    /**
+     * @todo: BANNER SLIDE
+     * @author: Chiến
+     * @since: 14-01-2020
+     */
     $('.owl-carousel').owlCarousel({
-        loop:true,
-        // margin:10,
-        // nav:false,
-        // items:1,
-        // center:true,
-        // animateOut: 'fadeOut'
-        animateOut: 'slideOutDown',
-        animateIn: 'flipInX',
         items:1,
-        margin:30,
-        stagePadding:30,
-        smartSpeed:450,
+        loop:true,
+        margin:0,
+        dots:true,
         autoplay:true,
-        autoplayTimeout:3000,
+        autoplayTimeout:5000,
         autoplayHoverPause:true,
-    })
+    });
+
+    /**
+     * @todo: SLIDE category
+     * @author: Chiến
+     * @since: 14-01-2020
+     */
+    // $('.m-c-slide').owlCarousel({
+    //     items:6,
+    //     loop:true,
+    //     margin:0,
+    //     dots:true,
+    //     autoplay:true,
+    //     autoplayTimeout:5000,
+    //     autoplayHoverPause:true,
+    // });
 
 
 
