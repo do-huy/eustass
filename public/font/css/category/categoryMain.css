@@ -1,0 +1,22 @@
+.category-main{
+    display: grid;
+    padding: 10px 15px;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 1px;
+    margin-bottom: 40px;
+}
+.sibar-category-main {
+    border: 1px solid #ececec;
+    padding: 5px 5px 5px 10px;
+}
+.content-category-main {
+    border: 1px solid #ececec;
+    padding: 5px 5px 5px 5px;
+}
+.product-category-main{
+    display: grid;
+    /* padding: 0 15px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin-bottom: 40px;
+}

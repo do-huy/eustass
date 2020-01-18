@@ -7,7 +7,7 @@
                         <ul class="navCate_1qlk">
                             @foreach($category_mains as $category_main)
                                 <li class="cateMain_2WI2 position-relative">
-                                    <a href="#" class="link-cate-efuIbv">
+                                    <a href="{{route('category.main.client',[$category_main->id])}}" class="link-cate-efuIbv">
                                         <span class="icon-wrap">
                                             <i class="fas fa-align-center"></i>
                                         </span>
@@ -15,7 +15,6 @@
                                             {{$category_main->name}}
                                         </span>
                                     </a>
-
                                     <div class="cate-sub-menu ">
                                         @foreach($category_main->categories as $category)
                                         <div class="content_categories">
