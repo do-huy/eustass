@@ -24,6 +24,7 @@
     <link href="{{ asset('/css/menu.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/slider.css') }}" rel="stylesheet">
     <link href="{{ asset('/font/css/header/header.css') }}" rel="stylesheet">
+    <link href="{{ asset('/font/css/category/categoryMain.css') }}" rel="stylesheet">
 
     @yield('css')
 

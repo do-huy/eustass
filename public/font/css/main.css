@@ -2820,9 +2820,9 @@ form.example button {
 
 .breadcrumb {
     padding: 8px 15px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     list-style: none;
-    background-color: #c5192d !important;
+    background: radial-gradient(circle, #c5192d, #ba2836, #ae323e, #a13a45, #94414a) !important;
     border-radius: 4px;
 }
 

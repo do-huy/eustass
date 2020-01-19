@@ -4,9 +4,15 @@
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('Trang chủ', route('home'));
 });
-// Home > Blog
-Breadcrumbs::for('category', function ($trail,$category) {
+//Home > CategoryMain
+Breadcrumbs::for('CategoryMain', function ($trail,$category_mains) {
     $trail->parent('home');
+    $trail->push($category_mains->name, route('category.main.client',[$category_mains->id]));
+});
+
+// Home > CategoryMain > Category
+Breadcrumbs::for('category', function ($trail,$category) {
+    $trail->parent('CategoryMain',$category->categoryMain);
     $trail->push($category->name, route('category.detail',[$category->id]));
 });
 

@@ -7,11 +7,8 @@
             <div class="col-sm-12 ">
                 {{-- {{ Breadcrumbs::render('product',$product) }} --}}
                     <div style="margin-bottom: 20px;" class="features_items"><!--features_items-->
-
                         <div class="detai-product">
-
                             <div class="col-sm-5">
-
                                     <div class="image-content-product">
                                         <img class="size_product" src="{{$product->image}}" id="myimage" data-title="Hình ảnh" data-help="{{$product->name}}" alt="">
                                     </div>
@@ -29,7 +26,6 @@
                                         @endforeach
                                         </section>
                                     </div>
-
                             </div>
                             <div class="col-sm-5">
                                 <div class="content-product-detail">
