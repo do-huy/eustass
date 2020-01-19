@@ -202,7 +202,7 @@
     left: 12px;
     right: 12px;
     z-index: 1;
-    height: 40px;
+    height: 32px;
     line-height: 36px;
     background-color: rgb(255, 255, 255);
     transition-duration: 0.3s;
@@ -217,7 +217,7 @@
 }
 
 .m-search-group .m-search{
-    height: 36px;
+    height: 32px;
     line-height: 36px;
     width: 100%;
     border-width: 0px;
@@ -227,6 +227,39 @@
     margin: 0px 0px 0px 8px;
     outline: 0px;
     padding: 0px;
+}
+
+.sticky .m-bhhlc{
+    position: fixed;
+    height: 52px;
+    background-image: radial-gradient(circle, #c5192d, #ba2836, #ae323e, #a13a45, #94414a);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.sticky .m-hamburger{
+    position: fixed;
+}
+
+.sticky .m-logo{
+    position: fixed;
+    opacity: 0;
+}
+
+.sticky .m-cart{
+    position: fixed;
+}
+
+.sticky .m-search-group{
+    position: fixed;
+    top: 10px;
+    left: 44px;
+    right: 48px;
+    height: 32px;
+}
+
+.sticky .m-search{
+    height: 32px;
 }
 
 .m-main .m-banner{
@@ -298,7 +331,7 @@
 
 .m-c-side{
     white-space: nowrap;
-    margin-bottom: 6px;
+    margin-bottom: 35px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -379,19 +412,20 @@
 }
 
 .m-c-product-item{
-    min-width: 140px;
+    min-width: 160px;
     display: inline-block;
     vertical-align: top;
     color: rgb(36, 36, 36);
-    margin: 0px 12px 0px 0px;
+    margin: 0px 20px 0px 0px;
     text-decoration: none;
 }
 
 .m-c-product-image{
     position: relative;
     z-index: 1;
-    width: 140px;
-    height: 140px;
+    height: 240px;
+    max-width: 210px;
+    margin: 0 auto;
 }
 
 .m-c-product-image img{

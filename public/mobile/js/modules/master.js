@@ -39,15 +39,18 @@
      * @author: Chiến
      * @since: 14-01-2020
      */
-    // $('.m-c-slide').owlCarousel({
-    //     items:6,
-    //     loop:true,
-    //     margin:0,
-    //     dots:true,
-    //     autoplay:true,
-    //     autoplayTimeout:5000,
-    //     autoplayHoverPause:true,
-    // });
+    $(document).ready(function() {
+        var stickyTop = $('.m-header').offset().top;
+        
+        $(global).scroll(function() {
+            var windowTop = $(window).scrollTop();
+            if (windowTop > stickyTop) {
+                $('.m-header').addClass('sticky');
+            } else {
+                $('.m-header').removeClass('sticky');
+            }
+        });
+    });
 
 
 
