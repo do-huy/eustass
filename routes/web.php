@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Category;
 use App\Models\CategoryMain;
+use App\Models\Product;
+use App\Models\TypeCategory;
 
 Auth::routes();
 Route::redirect('/', 'home', 301);
@@ -24,16 +27,16 @@ Route::namespace('Admin')->middleware('auth','isAdmin')->group( function () {
 });
 
 Route::get('tesst', function () {
-    dd(CategoryMain::with('categories.typeCategories')->get());
+    dd(TypeCategory::with('products')->get());
 });
 
 //phần fontend
 Route::namespace('Client')->group(function () {
     Route::get('/home','IndexController@index')->name('home');
     Route::get('home/product/{slug}','IndexController@productDetail')->name('product.detail');
-    Route::get('category-detail/{id}','CategoryController@category_detail')->name('category.detail');
-    Route::get('category-type/{id}','CategoryController@category_views')->name('category.views');
     Route::get('category-main/{id}','CategoryController@category_main_client')->name('category.main.client');
+    Route::get('category-detail/{id}','CategoryController@category_detail')->name('category.detail');
+    Route::get('category-type/{id}','CategoryController@category_views')->name('category.view.client');
     Route::middleware('auth')->group(function () {
         Route::post('add-to-cart/{product_id}', 'CartController@store')->name('cart.store');
         Route::post('add-to-cart-detail/{product_id}', 'CartController@store_detail')->name('cart.store.detail');

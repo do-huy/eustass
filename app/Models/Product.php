@@ -11,7 +11,7 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function category_type()
+    public function type_category()
     {
         return $this->belongsTo(TypeCategory::class);
     }

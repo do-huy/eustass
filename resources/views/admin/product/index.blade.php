@@ -41,7 +41,7 @@
                           Số lượng : {{$product->amount}} <br>
                           <span class="text-primary">Giá tiền : {{number_format($product->price)}} đ </span>
                         </td>
-                        <td><span class="text-primary">Danh mục</span><br>{{$product->CategoryMain->name}}<br>{{$product->Category->name}}<br>{{$product->category_type->name}}</td>
+                        <td><span class="text-primary">Danh mục</span><br>{{$product->CategoryMain->name}}<br>{{$product->Category->name}}<br>{{$product->type_category->name}}</td>
                         <td>
                           @foreach($product->properties as $property)
                            <div> {{ $property->name }} : {{ $property->description }} </div>

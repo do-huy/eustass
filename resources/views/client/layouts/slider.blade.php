@@ -21,7 +21,9 @@
                                             <div class="content_name_category">{{ $category->name }}</div>
                                             <ul>
                                                 @foreach($category->typeCategories as $categoryType)
-                                                <li><a class="active" href="{{route('category.views',[$categoryType->id])}}">{{ $categoryType->name }}</a></li>
+                                                <li>
+                                                    <a class="active" href="{{route('category.view.client',[$categoryType->id])}}">{{ $categoryType->name }}</a>
+                                                </li>
                                                 @endforeach
                                             </ul>
                                         </div>

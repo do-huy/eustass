@@ -25,15 +25,13 @@
 					</div>
 					<div class="list-product">
                         @foreach($products as $product)
-
                                 <div class="siggle-product">
                                     <a href="{{route('product.detail',[$product->slug])}}">
-                                    <div class="text-center">
+                                    {{-- <div class="text-center"> --}}
                                         <div class="image" style="background-image: url('{{$product->image}}')"></div>
-                                                {{-- <h2> {{number_format($product->price)}} đ</h2> --}}
-                                        <h4 class="name_product">{{ Str::limit($product->name,22) }}</h4>
+                                        <h4 style="height: 30px" class="name_product">{{ Str::limit($product->name,50) }}</h4>
                                         <span class="price_product"> {{number_format($product->price)}} </span>
-                                        <span class="price_product">đ</span>
+                                        <span class="price_product_d">đ</span>
                                         <form class="form-add-product" action="{{route('cart.store',[$product->id])}}" method="POST">
                                             @auth
                                                 <button  type="submit" class="btn btn-default add-to-cart btn-cart"><i class="fa fa-shopping-cart"></i>Chọn mua</button>
@@ -42,7 +40,7 @@
                                             @endauth
                                         </form>
                                         <img src="../upload/image/new.png" class="new" alt="" />
-                                    </div>
+                                    {{-- </div> --}}
                                     </a>
                                     <div class="choose">
                                         <i class="fa fa-plus-square"></i> Danh sách ưa thích

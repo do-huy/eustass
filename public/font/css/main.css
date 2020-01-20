@@ -260,7 +260,7 @@ a#scrollUp i {
 }
 
 .btn-default {
-    background: #c5192d !important;
+    background: radial-gradient(circle, #c5192d, #ba2836, #ae323e, #a13a45, #94414a) !important;
 }
 
 
@@ -870,17 +870,19 @@ h2.title {
 
 .siggle-product:hover {
     margin-top: -2px;
-    border: 1px solid #c5192d;
+    border: 1px solid #ccc;
     cursor: pointer;
 }
 
 .siggle-product .image {
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: round;
     width: 100%;
     height: 200px;
 }
-
+.breadcrumb>li+li:before {
+    content: ">" !important;
+}
 .form-add-product {
     position: absolute;
     bottom: 20px;
@@ -899,7 +901,7 @@ h2.title {
     height: 30px;
     line-height: 30px;
     width: 100%;
-    background-color: #c5192d;
+    background: radial-gradient(circle, #c5192d, #ba2836, #ae323e, #a13a45, #94414a) !important;
     border: 1px solid #c5192d !important;
     text-align: center;
     display: none;
@@ -2850,11 +2852,19 @@ form.example button {
 .name_product {
     font-size: 15px;
     color: #000;
+    padding: 0px 3px;
 }
 
 .price_product {
     font-size: 15px;
-    color: #000;
+    color: #ae323e;
+    font-weight: 550;
+    margin: 0px 0px 0px 3px;
+}
+.price_product_d {
+    font-size: 15px;
+    color: #ae323e;
+    font-weight: 550;
 }
 
 #detail-client-icon {

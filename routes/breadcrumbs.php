@@ -16,7 +16,14 @@ Breadcrumbs::for('category', function ($trail,$category) {
     $trail->push($category->name, route('category.detail',[$category->id]));
 });
 
+// Home > CategoryMain > Category > type_category
+Breadcrumbs::for('CategoryType', function ($trail,$categoryType) {
+    $trail->parent('category',$categoryType->category);
+    $trail->push($categoryType->name, route('category.view.client',[$categoryType->id]));
+});
+
+// Home > CategoryMain > Category > type_category > product
 Breadcrumbs::for('product', function ($trail,$product) {
-    $trail->parent('category',$product->category);
+    $trail->parent('CategoryType',$product->type_category);
     $trail->push($product->name, route('product.detail',[$product->id]));
 });

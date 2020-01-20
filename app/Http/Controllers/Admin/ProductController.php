@@ -29,7 +29,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->category_main_id = $request->category_main_id;
         $product->category_id = $request->category_id;
-        $product->category_type_id = $request->category_type_id;
+        $product->type_category_id = $request->category_type_id;
         $product->amount = $request->amount;
         $product->weight = $request->weight;
         $product->price = $request->price;
